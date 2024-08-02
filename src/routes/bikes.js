@@ -12,7 +12,7 @@ const router = Router();
 
 router.route("").get(getBikes).post(UserAuthenticated, postBikes);
 router
-    .route("/:id")
+    .route("/:name")
     .get(getBike)
     .put(UserAuthenticated, putBike)
     .delete(UserAuthenticated, deleteBike);

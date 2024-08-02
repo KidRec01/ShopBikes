@@ -12,7 +12,7 @@ export const getBikes = async (req, res) => {
 
 export const postBikes = async (req, res) => {
   try {
-    const bikes = req.body.bikes;    
+    const bikes = req.body.bikes;
     await db.Bikes.bulkCreate(bikes);
     return res.status(200).json({ message: "ok" });
   } catch (e) {
@@ -25,8 +25,8 @@ export const postBikes = async (req, res) => {
  */
 export const getBike = async (req, res) => {
   try {
-    const id = req.params.id;
-    const bike = await db.Bikes.findByPk(id);
+    const name = req.params.name;
+    const bike = await db.Bikes.findOne({ where: { name } });
     res.status(200).json(bike);
   } catch (e) {
     return res.status(500).json({ error: "error founded" });
