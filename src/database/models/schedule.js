@@ -24,7 +24,7 @@ const Schedule = (sequelize) =>
     },
     {
       // Opciones adicionales del modelo
-      tableName: "agenda", // Nombre de la tabla en la base de datos
+      tableName: "schedule", // Nombre de la tabla en la base de datos
       timestamps: true, // Indica si debe incluir campos createdAt y updatedAt
     },
   );

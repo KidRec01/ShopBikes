@@ -26,7 +26,7 @@ const Employees = (sequelize) =>
     },
     {
       // Opciones adicionales del modelo
-      tableName: "Employees", // Nombre de la tabla en la base de datos
+      tableName: "empleados", // Nombre de la tabla en la base de datos
       timestamps: true, // Indica si debe incluir campos createdAt y updatedAt
     },
   );
