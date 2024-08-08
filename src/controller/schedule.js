@@ -8,7 +8,7 @@ import { setEmail } from "../global/helpers.js"
  */
 export const createSchedule = async (req, res) => {
     try {
-        const { date, type, id_bike, client } = req.body
+        const { date, type, id_bike, client } = req.body;
         if (!date || !type || !id_bike) throw new Error("missing fields");
         const fullDate = new Date(date.year, date.month, date.day, date.hours)
         /**@type {Resend} */
@@ -26,7 +26,7 @@ export const createSchedule = async (req, res) => {
         await db.Schedule.create({ fech_agen: fullDate, tipo_agen: type, id_bike, ClientIdCli: clientDb[0].dataValues.id_cli });
         const product = await db.Bikes.findByPk(id_bike);
         const { data, error } = await resend.emails.send({
-            from: `Acme <onboarding@resend.dev>`,
+            from: `ShopBikes <onboarding@resend.dev>`,
             to: [process.env.ENTITY_EMAIL],
             subject: type,
             html: setEmail({

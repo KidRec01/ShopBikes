@@ -7,7 +7,7 @@ import modelServices from "./models/services.js";
 import modelAdmin from "./models/admin.js";
 
 const sequelize = new Sequelize(
-  "postgres://postgres:263201@localhost:5432/bikeShop",
+  "postgres://postgres:263201@localhost:5432/bikeshop",
 );
 
 modelBikes(sequelize);
